@@ -127,7 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="0907-codeTest.cpp" />
+    <ClCompile Include="0907-codeTest2.cpp" />
+    <ClCompile Include="0907-codeTest3.cpp" />
+    <ClCompile Include="0908-binary.cpp" />
+    <ClCompile Include="0908-test.cpp" />
+    <ClCompile Include="0908-파일입출력.cpp" />
+    <ClCompile Include="0908_input.cpp" />
+    <ClCompile Include="0908_input_Ex.cpp" />
+    <ClCompile Include="0911_class.cpp" />
+    <ClCompile Include="0911_file_read_binary_2.cpp" />
     <ClCompile Include="PosCodingOn.cpp" />
+    <ClCompile Include="Study.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="test11.cpp" />
+    <ClCompile Include="test2.cpp" />
+    <ClCompile Include="test3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
