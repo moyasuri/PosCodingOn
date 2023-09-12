@@ -7,13 +7,6 @@ using namespace std;
 bool inputstr(string*);
 bool chknum(string);
 
-
-
-
-
-
-
-
 int main()
 {
 //	string s = "Police say two people are suspected of\
@@ -29,7 +22,6 @@ int main()
 //	cout <<"*" << s[6] <<"*"<<s[7];
 
 	string str,str2;
-
 	
 	inputstr(&str);
 	inputstr(&str2);
