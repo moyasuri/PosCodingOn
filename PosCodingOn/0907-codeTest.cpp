@@ -48,11 +48,11 @@ int solution(vector<string> babbling) {
     for (vector<string>::iterator it=babbling.begin(); it != babbling.end();++it)
     {
             int num = 0;
-            string temp = *it; //¹Ùºí¸µÀÇ  ¼øÂ÷ÀûÀÎ ¹®ÀÚ¿­À» ¹Ş¾Æ¿Â´Ù.
+            string temp = *it; //ë°”ë¸”ë§ì˜  ìˆœì°¨ì ì¸ ë¬¸ìì—´ì„ ë°›ì•„ì˜¨ë‹¤.
             
             for (int i = 0;i < 4;i++)
             {
-                size_t nPos = temp.find(tmp[i]); // ¹Ùºí¸µÀÇ ¹®ÀÚ¿­ÀÌ tmp(aya ye woo maµî)µîÀÇ ¹®ÀÚ¿­°ú ÀÏÄ¡ÇÏ´ÂÁö È®ÀÎÇÑ´Ù.
+                size_t nPos = temp.find(tmp[i]); // ë°”ë¸”ë§ì˜ ë¬¸ìì—´ì´ tmp(aya ye woo maë“±)ë“±ì˜ ë¬¸ìì—´ê³¼ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸í•œë‹¤.
                 if (nPos != string::npos) {
                     if(temp.size()>=temp.find(tmp[i])+tmp_n[i]+tmp_n[i])
                     {   

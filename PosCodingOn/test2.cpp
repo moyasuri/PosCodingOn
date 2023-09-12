@@ -17,10 +17,10 @@ int main()
 	inputstr(&str);
 	inputstr(&str2);
 
-	cout << " ºÙÀÌ±â " << endl;
+	cout << " ë¶™ì´ê¸° " << endl;
 	cout << str + str2 << endl;
 
-	cout << " ÇÕ " << endl;
+	cout << " í•© " << endl;
 	cout << stoi(str) + stoi(str2) << endl;
 
 

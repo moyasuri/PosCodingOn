@@ -22,10 +22,10 @@ int main()
 //The 38-year-old man and 55-year-old woman were working near the affected area, \
 //the 32nd Great Wall.";
 //
-//	cout <<"¹®ÀÚ¿­±æÀÌ:" << s.size() << endl;
-//	cout <<"100¹øÂ°¹®ÀÚ:"<< s[100] << endl;
-//	cout <<"Ã³À½ two°¡ ³ª¿À´Â ÀÎµ¦½º" << s.find("two") << endl;
-//	cout <<"µÎ¹øÂ° two°¡ ³ª¿À´Â ÀÎµ¦½º"<< s.find("two", 12) << endl;
+//	cout <<"ë¬¸ìì—´ê¸¸ì´:" << s.size() << endl;
+//	cout <<"100ë²ˆì§¸ë¬¸ì:"<< s[100] << endl;
+//	cout <<"ì²˜ìŒ twoê°€ ë‚˜ì˜¤ëŠ” ì¸ë±ìŠ¤" << s.find("two") << endl;
+//	cout <<"ë‘ë²ˆì§¸ twoê°€ ë‚˜ì˜¤ëŠ” ì¸ë±ìŠ¤"<< s.find("two", 12) << endl;
 //	cout <<"*" << s[6] <<"*"<<s[7];
 
 	string str,str2;
@@ -34,10 +34,10 @@ int main()
 	inputstr(&str);
 	inputstr(&str2);
 
-	cout << " ºÙÀÌ±â " << endl;
+	cout << " ë¶™ì´ê¸° " << endl;
 	cout << str + str2 << endl;
 
-	cout << " ÇÕ " << endl;
+	cout << " í•© " << endl;
 	cout << stoi(str) + stoi(str2) << endl;
 
 

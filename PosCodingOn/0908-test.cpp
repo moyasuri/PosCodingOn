@@ -8,15 +8,15 @@ using namespace std;
 int main()
 {
 
-	std::ifstream file_read("test_file.txt"); // ÆÄÀÏ ¼±¾ğ ¹× ¿­±â¸¦ µ¿½Ã¿¡
+	std::ifstream file_read("test_file.txt"); // íŒŒì¼ ì„ ì–¸ ë° ì—´ê¸°ë¥¼ ë™ì‹œì—
 	if (file_read.fail()) {
-		cout << "ÆÄÀÏ ¾øÀ½" << endl;
+		cout << "íŒŒì¼ ì—†ìŒ" << endl;
 		return -1;
 	}
 
 	string file_str = "";
 	string line;
-	while (std::getline(file_read, line)) { // get_line() fileÀÇ ³»¿ëÀ» ÇÑ ÁÙ¾¿ ÀĞ¾î¿È
+	while (std::getline(file_read, line)) { // get_line() fileì˜ ë‚´ìš©ì„ í•œ ì¤„ì”© ì½ì–´ì˜´
 		file_str += line + "\n";
 		cout << line << endl;
 	}
@@ -24,17 +24,17 @@ int main()
 	file_read.close();
 
 	std::ofstream file;
-	// ÇÁ·Î±×·¥ÀÇ Ãâ·ÂÀ» ÆÄÀÏ¿¡ ÀúÀåÇÒ ¼ö ÀÖ°Ô µ½´Â Å¬·¡½º(program -> file)
+	// í”„ë¡œê·¸ë¨ì˜ ì¶œë ¥ì„ íŒŒì¼ì— ì €ì¥í•  ìˆ˜ ìˆê²Œ ë•ëŠ” í´ë˜ìŠ¤(program -> file)
 
 	file.open("test_file2.txt");
-	//ofstream ±âº»°ª->  std::ios::out (¾²±â¸ğµå) | std::ios::trunc (ÆÄÀÏÀÇ ³»¿ëÀ» ¸ğµÎ »èÁ¦ÇÏ°í ¿­±â)
-	//file.open("test_file2.txt", std::ios::out | std::ios::app); // std::ios::app ( ÆÄÀÏÀÇ ¸¶Áö¸· ÁÙ¿¡ Ãß°¡ )
+	//ofstream ê¸°ë³¸ê°’->  std::ios::out (ì“°ê¸°ëª¨ë“œ) | std::ios::trunc (íŒŒì¼ì˜ ë‚´ìš©ì„ ëª¨ë‘ ì‚­ì œí•˜ê³  ì—´ê¸°)
+	//file.open("test_file2.txt", std::ios::out | std::ios::app); // std::ios::app ( íŒŒì¼ì˜ ë§ˆì§€ë§‰ ì¤„ì— ì¶”ê°€ )
 	if (file.fail()) {
-		cout << "ÆÄÀÏ ¿­±â ½ÇÆĞ" << endl;
+		cout << "íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨" << endl;
 		//return -1;
 	}
-	// º¸Åë ¾²±â±ÇÇÑ¿¡¼­´Â ÆÄÀÏÀÌ ¾øÀ» °æ¿ì ÀÚµ¿À¸·Î »ı¼ºµÊ. ¸¸¾à ÀÚµ¿À¸·Î »ı¼ºµÇÁö ¾Ê¾ÒÀ» °æ¿ì fail()ÀÌ true°¡ ³ª¿Ã ¿¹Á¤
-	file << file_str; // file_str À» file¿¡ ÀÛ¼º
+	// ë³´í†µ ì“°ê¸°ê¶Œí•œì—ì„œëŠ” íŒŒì¼ì´ ì—†ì„ ê²½ìš° ìë™ìœ¼ë¡œ ìƒì„±ë¨. ë§Œì•½ ìë™ìœ¼ë¡œ ìƒì„±ë˜ì§€ ì•Šì•˜ì„ ê²½ìš° fail()ì´ trueê°€ ë‚˜ì˜¬ ì˜ˆì •
+	file << file_str; // file_str ì„ fileì— ì‘ì„±
 	file.close();
 
 	return 0;

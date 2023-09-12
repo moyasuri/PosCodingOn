@@ -13,7 +13,7 @@ int solution(vector<string> babbling) {
     for (vector<string>::iterator it = babbling.begin(); it != babbling.end();++it)
     {
 
-        string str_bab = *it; //¹Ùºí¸µÀÇ  ¼øÂ÷ÀûÀÎ ¹®ÀÚ¿­À» ¹Ş¾Æ¿Â´Ù.
+        string str_bab = *it; //ë°”ë¸”ë§ì˜  ìˆœì°¨ì ì¸ ë¬¸ìì—´ì„ ë°›ì•„ì˜¨ë‹¤.
         int cha_cnt = 0;
         for (int i = 0;i < 4;i++)
         {
@@ -22,7 +22,7 @@ int solution(vector<string> babbling) {
             bool conti = true;
             while (conti)
             {
-                size_t nPos = str_bab.find(Words[i],index_Point); // ¹Ùºí¸µÀÇ ¹®ÀÚ¿­ÀÌ (aya ye woo ma)ÀÇ ¹®ÀÚ¿­°ú ÀÏÄ¡ÇÏ´ÂÁö È®ÀÎÇÑ´Ù.
+                size_t nPos = str_bab.find(Words[i],index_Point); // ë°”ë¸”ë§ì˜ ë¬¸ìì—´ì´ (aya ye woo ma)ì˜ ë¬¸ìì—´ê³¼ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸í•œë‹¤.
                 if (nPos != string::npos) {
 
 

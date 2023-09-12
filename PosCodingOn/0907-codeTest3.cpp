@@ -16,7 +16,7 @@ using namespace std;
 //    for (vector<string>::iterator it = babbling.begin(); it != babbling.end();++it)
 //    {
 //
-//        string str_bab = *it; //¹Ùºí¸µÀÇ  ¼øÂ÷ÀûÀÎ ¹®ÀÚ¿­À» ¹Ş¾Æ¿Â´Ù.
+//        string str_bab = *it; //ë°”ë¸”ë§ì˜  ìˆœì°¨ì ì¸ ë¬¸ìì—´ì„ ë°›ì•„ì˜¨ë‹¤.
 //        
 //        int sum = 1;
 //
@@ -25,13 +25,13 @@ using namespace std;
 //        {
 //    
 //         
-//                size_t nPos = str_bab.find(Words[i]); // ¹Ùºí¸µÀÇ ¹®ÀÚ¿­ÀÌ (aya ye woo ma)ÀÇ ¹®ÀÚ¿­°ú ÀÏÄ¡ÇÏ´ÂÁö È®ÀÎÇÑ´Ù.
+//                size_t nPos = str_bab.find(Words[i]); // ë°”ë¸”ë§ì˜ ë¬¸ìì—´ì´ (aya ye woo ma)ì˜ ë¬¸ìì—´ê³¼ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸í•œë‹¤.
 //                if (nPos != string::npos) {
 //                    if (str_bab.size() - str_bab.find(Words[i]) >= 2 * Words_Cnt[i])
 //                    {
 //                        if (str_bab.substr(str_bab.find(Words[i]) + Words_Cnt[i], Words_Cnt[i]) == Words[i])
 //                        {
-//                            break;    // Ä«¿îÆ®ÇÏ¸é¾ÈµÅ
+//                            break;    // ì¹´ìš´íŠ¸í•˜ë©´ì•ˆë¼
 //                        }
 //                        else
 //                            str_bab.replace(nPos, Words_Cnt[i], Rep[i]);
@@ -107,10 +107,10 @@ string solution(string s)
     {
  
 
-        if (c != ' ') // °ø¹éÀÌ ¾Æ´Ï¸é.
+        if (c != ' ') // ê³µë°±ì´ ì•„ë‹ˆë©´.
         {
             space_cnt = 0;
-            word += c; // word¿¡ Ä³¸¯ÅÍ¸¦ Ãß°¡ÇÏ°Ú´Ù.
+            word += c; // wordì— ìºë¦­í„°ë¥¼ ì¶”ê°€í•˜ê² ë‹¤.
             if (space_cnt_b >= 1) 
             {
                 string temp;
@@ -120,12 +120,12 @@ string solution(string s)
             }
           
         }
-        else // °ø¹éÀÌ¶ó¸é  > ¾ó¸¶¸¸Å­ °ø¹éÀÌ ÀÖ´ÂÁö È®ÀÎÇØºÁ¾ß ÇÑ´Ù.
+        else // ê³µë°±ì´ë¼ë©´  > ì–¼ë§ˆë§Œí¼ ê³µë°±ì´ ìˆëŠ”ì§€ í™•ì¸í•´ë´ì•¼ í•œë‹¤.
         {
-            space_cnt++; // °ø¹éÀÌ´Ï±î Ä«¿îÆ®¸¦ ´Ã·Á
-            if (space_cnt_b == 0) { // Ä«¿îÆ®°¡ 1ÀÌ¶ó¸é Ã³À½ÀÌ´Ï±î ¿ì¼± ½ºÆ®¸µ¿¡ °ªÀ» ÀÔ·ÂÇØ
-                mys.push_back(word); // mys¿¡ word¸¦ ÀÔ·ÂÇÑ´Ù. 
-                word = ""; // word¸¦ ÃÊ±âÈ­ ½ÃÄÑ
+            space_cnt++; // ê³µë°±ì´ë‹ˆê¹Œ ì¹´ìš´íŠ¸ë¥¼ ëŠ˜ë ¤
+            if (space_cnt_b == 0) { // ì¹´ìš´íŠ¸ê°€ 1ì´ë¼ë©´ ì²˜ìŒì´ë‹ˆê¹Œ ìš°ì„  ìŠ¤íŠ¸ë§ì— ê°’ì„ ì…ë ¥í•´
+                mys.push_back(word); // mysì— wordë¥¼ ì…ë ¥í•œë‹¤. 
+                word = ""; // wordë¥¼ ì´ˆê¸°í™” ì‹œì¼œ
             }
 
         }
@@ -186,7 +186,7 @@ int main()
 
     //string  t = "10203";
     //string  p = "15";
-    //int k = p.size(); // pÀÇ ¹®ÀÚ°³¼ö
+    //int k = p.size(); // pì˜ ë¬¸ìê°œìˆ˜
     //int answer = 0;
     //for (int i = 0; i < t.size() - (k-1) ;i++)
     //{

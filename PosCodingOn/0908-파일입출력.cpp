@@ -6,21 +6,21 @@
 
 
 
-// <fstream> ÆÄÀÏÀ» ÀĞ°í, ¾µ ¼ö ÀÖµµ·Ï °ü·Ã ±â´ÉÀ» Á¦°øÇÏ´Â Çì´õ
-// .open("ÆÄÀÏ¸í"); // ÆÄÀÏ ¿­±â
-// .is_open(); //ÆÄÀÏ ¿­±â¿¡ ¼º°øÇß´Ù¸é true
-// .fail(); // ÆÄÀÏ ¿­±â¿¡ ½ÇÆĞÇß´Ù¸é true
-// .close(); ÆÄÀÏ ´İ±â
+// <fstream> Ä†Ã„Å”ÄÅ”Å¥ Å”ÄÂ°Ã­, Å¾Ä¾ ÅºÃ¶ Å”Ã–Ä¾Ä¾Ë‡Ä Â°Ã¼Ë‡Ä‚ Ä…Ã¢Â´Ã‰Å”Å¥ ÃÅšÂ°Å™Ã‡ÄÂ´Ã‚ Ã‡Ä›Â´Å‘
+// .open("Ä†Ã„Å”ÄÂ¸Ã­"); // Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢
+// .is_open(); //Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢Å¼Ä„ ÅºÅŸÂ°Å™Ã‡ÃŸÂ´Å®Â¸Ã© true
+// .fail(); // Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢Å¼Ä„ ËÃ‡Ä†ÄÃ‡ÃŸÂ´Å®Â¸Ã© true
+// .close(); Ä†Ã„Å”Ä Â´ÃÄ…Ã¢
 
 
 // ifstream
-// ÆÄÀÏÀÇ ³»¿ëÀ» °¡Áö°í¿Í¼­ ÇÁ·Î±Û¸Å¿¡ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô µµ¿ÍÁÖ´Â Å¬·¡½º
+// Ä†Ã„Å”ÄÅ”Ã‡ Å‚Å¥Å¼Ã«Å”Å¥ Â°Ä„ÃÃ¶Â°Ã­Å¼ÃÅºÂ­ Ã‡ÃË‡ÃÄ…Å°Â¸Ä¹Å¼Ä„ Å”Ã”Ë‡Ã‚Ã‡Å‡ ÅºÃ¶ Å”Ã–Â°Ã” Ä¾Ä¾Å¼ÃÃÃ–Â´Ã‚ Ä¹Å¹Ë‡Ä„ËÅŸ
 
 // string str
-// file >> str // ¶ç¾î¾²±â Àü±îÁö str¿¡ ÀúÀå
+// file >> str // Å›Ã§Å¾Ã®Å¾Ë›Ä…Ã¢ Å”Ã¼Ä…Ã®ÃÃ¶ strÅ¼Ä„ Å”ÃºÅ”Äº
 
 
-// ¿¬±¸ÇÒ °¡Ä¡<<
+// Å¼Å¹Ä…Â¸Ã‡Å‡ Â°Ä„Ã„Ä„<<
 // ifstream x
 // x>>name>>tel
 
@@ -48,25 +48,25 @@ void prac0()
 	// std::ifstream file_read;
 	// file_read.open("test_file.txt");   
 
-	// ÆÄÀÏ ¼±¾ğ°ú, ¿­±â¸¦ µû·Îµû·Î
+	// Ä†Ã„Å”Ä ÅºÄ…Å¾Ä‘Â°Ãº, Å¼Â­Ä…Ã¢Â¸Åš Ä¾Å±Ë‡ÃÄ¾Å±Ë‡Ã
 
-	std::ifstream file_read("hello.txt"); // ÆÄÀÏ ¼±¾ğ ¹× ¿­±â¸¦ µ¿½Ã¿¡
+	std::ifstream file_read("hello.txt"); // Ä†Ã„Å”Ä ÅºÄ…Å¾Ä‘ Å¡Ã— Å¼Â­Ä…Ã¢Â¸Åš Ä¾Å¼ËÄ‚Å¼Ä„
 	if (file_read.fail()) {
-		cout << "ÆÄÀÏ ¾øÀ½" << endl;
-		// return -1;ÆÄÀÏÀÌ ¾È¿­¸®°Å³ª ¾øÀ»¶§ ¹İÈ¯ÇØÁÖ´Â ¼ıÀÚ (ÇÔ¼ö°¡ intÇüÀÌ¶ó °Á -1 ¹İÈ¯ÇØÁØ°Í)
+		cout << "Ä†Ã„Å”Ä Å¾Å™Å”Ë" << endl;
+		// return -1;Ä†Ã„Å”ÄÅ”Äš Å¾ÄŒÅ¼Â­Â¸Å½Â°Ä¹Å‚Å Å¾Å™Å”Å¥Å›Â§ Å¡ÃÄŒÅ»Ã‡Å˜ÃÃ–Â´Ã‚ ÅºÃ½Å”Ãš (Ã‡Ã”ÅºÃ¶Â°Ä„ intÃ‡Ã¼Å”ÄšÅ›Ã³ Â°Ã -1 Å¡ÃÄŒÅ»Ã‡Å˜ÃÅ˜Â°Ã)
 	}
 
 	string file_str = "";
 	string line;
 	vector<string> myStr;
 
-	// * Áß¿ä, vector¶ó´Â °³³äÀÌ ÀÚµ¿À¸·Î capa ´Ã·ÁÁÖ´Â°Ô ¾Æ´Ï¶ó push_back °°Àº ÇÔ¼ö¸¦ ›§À»¶§¿¡¸¸ ÀÚµ¿À¸·Î ´Ã·ÁÁÖ´Â °³³äÀÌ¾ß.
-	// µû¶ó¼­ ¾Æ·¡¿Í °°Àº ½Ç½ÀÀ» ÇÒ¶§¿¡´Â assignÀ» ¹İµå½Ã ÇØÁà¾ßµÅ
-	myStr.assign(10, ""); // ±ÛÀÌ ¸îÁÙ·Î ³ª´µ¾îÁ® ÀÖÀ»Áö ¸ğ¸£´Ï 10À» ³ÖÀ½
-	int k = 0; // string vectorÀÇ ÀÎµ¦½º
+	// * ÃÃŸÅ¼Ã¤, vectorÅ›Ã³Â´Ã‚ Â°Å‚Å‚Ã¤Å”Äš Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã capa Â´Ä‚Ë‡ÃÃÃ–Â´Ã‚Â°Ã” Å¾Ä†Â´ÄÅ›Ã³ push_back Â°Â°Å”ÅŸ Ã‡Ã”ÅºÃ¶Â¸Åš Â›Â§Å”Å¥Å›Â§Å¼Ä„Â¸Â¸ Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã Â´Ä‚Ë‡ÃÃÃ–Â´Ã‚ Â°Å‚Å‚Ã¤Å”ÄšÅ¾ÃŸ.
+	// Ä¾Å±Å›Ã³ÅºÂ­ Å¾Ä†Ë‡Ä„Å¼Ã Â°Â°Å”ÅŸ ËÃ‡ËÅ”Å”Å¥ Ã‡Å‡Å›Â§Å¼Ä„Â´Ã‚ assignÅ”Å¥ Å¡ÃÄ¾ÄºËÄ‚ Ã‡Å˜ÃÅ•Å¾ÃŸÄ¾Ä¹
+	myStr.assign(10, ""); // Ä…Å°Å”Äš Â¸Ã®ÃÅ®Ë‡Ã Å‚ÅÂ´Ä¾Å¾Ã®ÃÅ½ Å”Ã–Å”Å¥ÃÃ¶ Â¸Ä‘Â¸ÅÂ´Ä 10Å”Å¥ Å‚Ã–Å”Ë
+	int k = 0; // string vectorÅ”Ã‡ Å”ÃÄ¾ÅšËÅŸ
 
 
-	while (std::getline(file_read, line)) { // get_line() fileÀÇ ³»¿ëÀ» ÇÑ ÁÙ¾¿ ÀĞ¾î¿È
+	while (std::getline(file_read, line)) { // get_line() fileÅ”Ã‡ Å‚Å¥Å¼Ã«Å”Å¥ Ã‡Åƒ ÃÅ®Å¾Å¼ Å”ÄÅ¾Ã®Å¼ÄŒ
 		file_str += line + "\n";
 		cout << line << endl;
 		myStr[k] = line;
@@ -79,7 +79,7 @@ void prac0()
 	//
 	//
 	//
-	//// ÇÒ´çÀ» ¹İµå½ÃÇØ¾ßÇÑ´Ù.
+	//// Ã‡Å‡Â´Ã§Å”Å¥ Å¡ÃÄ¾ÄºËÄ‚Ã‡Å˜Å¾ÃŸÃ‡ÅƒÂ´Å®.
 	//
 	//file_str = "";
 	//
@@ -91,17 +91,17 @@ void prac0()
 	//
 	//
 	//std::ofstream file;
-	// ÇÁ·Î±×·¥ÀÇ Ãâ·ÂÀ» ÆÄÀÏ¿¡ ÀúÀåÇÒ ¼ö ÀÖ°Ô µ½´Â Å¬·¡½º(program -> file)
+	// Ã‡ÃË‡ÃÄ…Ã—Ë‡Ä½Å”Ã‡ Ä‚Ã¢Ë‡Ã‚Å”Å¥ Ä†Ã„Å”ÄÅ¼Ä„ Å”ÃºÅ”ÄºÃ‡Å‡ ÅºÃ¶ Å”Ã–Â°Ã” Ä¾ËÂ´Ã‚ Ä¹Å¹Ë‡Ä„ËÅŸ(program -> file)
 	//
 	//file.open("output.txt");
-	//ofstream ±âº»°ª->  std::ios::out (¾²±â¸ğµå) | std::ios::trunc (ÆÄÀÏÀÇ ³»¿ëÀ» ¸ğµÎ »èÁ¦ÇÏ°í ¿­±â)
-	//file.open("test_file2.txt", std::ios::out | std::ios::app); // std::ios::app ( ÆÄÀÏÀÇ ¸¶Áö¸· ÁÙ¿¡ Ãß°¡ )
+	//ofstream Ä…Ã¢ÅŸÅ¥Â°Å->  std::ios::out (Å¾Ë›Ä…Ã¢Â¸Ä‘Ä¾Äº) | std::ios::trunc (Ä†Ã„Å”ÄÅ”Ã‡ Å‚Å¥Å¼Ã«Å”Å¥ Â¸Ä‘Ä¾Ã Å¥ÄÃÅšÃ‡ÄÂ°Ã­ Å¼Â­Ä…Ã¢)
+	//file.open("test_file2.txt", std::ios::out | std::ios::app); // std::ios::app ( Ä†Ã„Å”ÄÅ”Ã‡ Â¸Å›ÃÃ¶Â¸Ë‡ ÃÅ®Å¼Ä„ Ä‚ÃŸÂ°Ä„ )
 	//if (file.fail()) {
-	//	cout << "ÆÄÀÏ ¿­±â ½ÇÆĞ" << endl;
+	//	cout << "Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢ ËÃ‡Ä†Ä" << endl;
 	//	return -1;
 	//}
-	// º¸Åë ¾²±â±ÇÇÑ¿¡¼­´Â ÆÄÀÏÀÌ ¾øÀ» °æ¿ì ÀÚµ¿À¸·Î »ı¼ºµÊ. ¸¸¾à ÀÚµ¿À¸·Î »ı¼ºµÇÁö ¾Ê¾ÒÀ» °æ¿ì fail()ÀÌ true°¡ ³ª¿Ã ¿¹Á¤
-	// file << file_str; // file_str À» file¿¡ ÀÛ¼º
+	// ÅŸÂ¸Ä¹Ã« Å¾Ë›Ä…Ã¢Ä…Ã‡Ã‡ÅƒÅ¼Ä„ÅºÂ­Â´Ã‚ Ä†Ã„Å”ÄÅ”Äš Å¾Å™Å”Å¥ Â°Ä‡Å¼Ä› Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã Å¥Ã½ÅºÅŸÄ¾Ä˜. Â¸Â¸Å¾Å• Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã Å¥Ã½ÅºÅŸÄ¾Ã‡ÃÃ¶ Å¾Ä˜Å¾Å‡Å”Å¥ Â°Ä‡Å¼Ä› fail()Å”Äš trueÂ°Ä„ Å‚ÅÅ¼Ä‚ Å¼Å¡ÃÂ¤
+	// file << file_str; // file_str Å”Å¥ fileÅ¼Ä„ Å”Å°ÅºÅŸ
 	//file.close();
 	//
 }
@@ -115,34 +115,34 @@ member_Inf prac1()
 	string t_name;
 	int t_pw;
 
-	cout << "3¸íÀÇ È¸¿ø¿¡ ´ëÇÑ ÀÌ¸§ ºñ¹Ğ¹øÈ£¸¦ ¼øÂ÷ÀûÀ¸·Î ÀÔ·ÂÇÏ¼¼¿ä." << endl;
-	cout << "1¹øÂ°È¸¿ø : " ;
+	cout << "3Â¸Ã­Å”Ã‡ ÄŒÂ¸Å¼Å™Å¼Ä„ Â´Ã«Ã‡Åƒ Å”ÄšÂ¸Â§ ÅŸÅ„Å¡ÄÅ¡Å™ÄŒÅÂ¸Åš ÅºÅ™Ã‚Ã·Å”Å±Å”Â¸Ë‡Ã Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤." << endl;
+	cout << "1Å¡Å™Ã‚Â°ÄŒÂ¸Å¼Å™ : " ;
 	cin >> t_name >> t_pw;
 	name.push_back(t_name);
 	pw.push_back(t_pw);
-	cout << "2¹øÂ°È¸¿ø : " ;
+	cout << "2Å¡Å™Ã‚Â°ÄŒÂ¸Å¼Å™ : " ;
 	cin >> t_name >> t_pw;
 	name.push_back(t_name);
 	pw.push_back(t_pw);
-	cout << "3¹øÂ°È¸¿ø : " ;
+	cout << "3Å¡Å™Ã‚Â°ÄŒÂ¸Å¼Å™ : " ;
 	cin >> t_name >> t_pw;
 	name.push_back(t_name);
 	pw.push_back(t_pw);
 
-	cout << "------------ È¸¿ø ¸íºÎ ÆÄÀÏ ÀĞ±â -------------" << endl;
+	cout << "------------ ÄŒÂ¸Å¼Å™ Â¸Ã­ÅŸÃ Ä†Ã„Å”Ä Å”ÄÄ…Ã¢ -------------" << endl;
 
 
 
 	
 	std::ofstream file;
-	// ÇÁ·Î±×·¥ÀÇ Ãâ·ÂÀ» ÆÄÀÏ¿¡ ÀúÀåÇÒ ¼ö ÀÖ°Ô µ½´Â Å¬·¡½º(program -> file)
+	// Ã‡ÃË‡ÃÄ…Ã—Ë‡Ä½Å”Ã‡ Ä‚Ã¢Ë‡Ã‚Å”Å¥ Ä†Ã„Å”ÄÅ¼Ä„ Å”ÃºÅ”ÄºÃ‡Å‡ ÅºÃ¶ Å”Ã–Â°Ã” Ä¾ËÂ´Ã‚ Ä¹Å¹Ë‡Ä„ËÅŸ(program -> file)
 
 	file.open("member.txt");
 	if (file.fail()) {
-		cout << "ÆÄÀÏ ¿­±â ½ÇÆĞ" << endl;
+		cout << "Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢ ËÃ‡Ä†Ä" << endl;
 		//return -1;
 	}
-	// º¸Åë ¾²±â±ÇÇÑ¿¡¼­´Â ÆÄÀÏÀÌ ¾øÀ» °æ¿ì ÀÚµ¿À¸·Î »ı¼ºµÊ. ¸¸¾à ÀÚµ¿À¸·Î »ı¼ºµÇÁö ¾Ê¾ÒÀ» °æ¿ì fail()ÀÌ true°¡ ³ª¿Ã ¿¹Á¤
+	// ÅŸÂ¸Ä¹Ã« Å¾Ë›Ä…Ã¢Ä…Ã‡Ã‡ÅƒÅ¼Ä„ÅºÂ­Â´Ã‚ Ä†Ã„Å”ÄÅ”Äš Å¾Å™Å”Å¥ Â°Ä‡Å¼Ä› Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã Å¥Ã½ÅºÅŸÄ¾Ä˜. Â¸Â¸Å¾Å• Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã Å¥Ã½ÅºÅŸÄ¾Ã‡ÃÃ¶ Å¾Ä˜Å¾Å‡Å”Å¥ Â°Ä‡Å¼Ä› fail()Å”Äš trueÂ°Ä„ Å‚ÅÅ¼Ä‚ Å¼Å¡ÃÂ¤
 	string file_str = "";
 	vector<string>::iterator it = name.begin();	
 	vector<int>::iterator it2 = pw.begin();
@@ -153,14 +153,14 @@ member_Inf prac1()
 	}
 
 
-	file << file_str; // file_str À» file¿¡ ÀÛ¼º
+	file << file_str; // file_str Å”Å¥ fileÅ¼Ä„ Å”Å°ÅºÅŸ
 	file.close();
 
 
 
-	std::ifstream file_read("member.txt"); // ÆÄÀÏ ¼±¾ğ ¹× ¿­±â¸¦ µ¿½Ã¿¡
+	std::ifstream file_read("member.txt"); // Ä†Ã„Å”Ä ÅºÄ…Å¾Ä‘ Å¡Ã— Å¼Â­Ä…Ã¢Â¸Åš Ä¾Å¼ËÄ‚Å¼Ä„
 	if (file_read.fail()) {
-		cout << "ÆÄÀÏ ¾øÀ½" << endl;
+		cout << "Ä†Ã„Å”Ä Å¾Å™Å”Ë" << endl;
 	}
 
 
@@ -168,7 +168,7 @@ member_Inf prac1()
 		string line;
 
 
-		while (std::getline(file_read, line)) { // get_line() fileÀÇ ³»¿ëÀ» ÇÑ ÁÙ¾¿ ÀĞ¾î¿È
+		while (std::getline(file_read, line)) { // get_line() fileÅ”Ã‡ Å‚Å¥Å¼Ã«Å”Å¥ Ã‡Åƒ ÃÅ®Å¾Å¼ Å”ÄÅ¾Ã®Å¼ÄŒ
 			file_str += line + "\n";
 			cout << line << endl;
 		}
@@ -196,10 +196,10 @@ void t_prac2()
 		std::ifstream member_file;
 		std::string name, pw, str1, str2;
 		member_file.open("member.txt");
-		std::cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä.";
+		std::cout << "Å”ÄšÂ¸Â§Å”Å¥ Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤.";
 		std::cin >> name;
 
-		std::cout << "ºñ¹øÀ» ÀÔ·ÂÇÏ¼¼¿ä.";
+		std::cout << "ÅŸÅ„Å¡Å™Å”Å¥ Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤.";
 		std::cin >> pw;
 
 		bool flag = false;
@@ -210,8 +210,8 @@ void t_prac2()
 			}
 		}
 
-		if (flag) cout << "·Î±×ÀÎ ¼º°ø";
-		else cout << "·Î±×ÀÎ ½ÇÆĞ";
+		if (flag) cout << "Ë‡ÃÄ…Ã—Å”Ã ÅºÅŸÂ°Å™";
+		else cout << "Ë‡ÃÄ…Ã—Å”Ã ËÃ‡Ä†Ä";
 
 		member_file.close();
 
@@ -253,7 +253,7 @@ bool checkFileOpen(std::ifstream& file) {
 
 bool checkFileOpen(std::ofstream& file) {
 	if (file.fail()) {
-		cout << "ÆÄÀÏ ¾øÀ½" << endl;
+		cout << "Ä†Ã„Å”Ä Å¾Å™Å”Ë" << endl;
 		return false;
 	}
 	else return true;
@@ -272,13 +272,13 @@ void t_prac3()
 	}
 
 	
-	cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä. ";
+	cout << "Å”ÄšÂ¸Â§Å”Å¥ Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤. ";
 	cin >> name_in;
 	
-	cout << "ºñ¹øÀ» ÀÔ·ÂÇÏ¼¼¿ä. ";
+	cout << "ÅŸÅ„Å¡Å™Å”Å¥ Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤. ";
 	cin >> pw_in;
 
-	bool flag = false; // ·Î±×ÀÎ ¼º°ø ¿©ºÎ¸¦ ´ã´Â º¯¼ö
+	bool flag = false; // Ë‡ÃÄ…Ã—Å”Ã ÅºÅŸÂ°Å™ Å¼Å ÅŸÃÂ¸Åš Â´ÄƒÂ´Ã‚ ÅŸÅ»ÅºÃ¶
 	while (member_file >> name >> pw) {
 		if (name == name_in && pw == pw_in) {
 			flag = true;
@@ -289,14 +289,14 @@ void t_prac3()
 
 	if (flag) {
 		std::string tel_in, tel;
-		cout << "·Î±×ÀÎ ¼º°ø" << endl;
-		cout << "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ";
+		cout << "Ë‡ÃÄ…Ã—Å”Ã ÅºÅŸÂ°Å™" << endl;
+		cout << "Å”Ã¼ÄŒÂ­Å¡Å™ÄŒÅÂ¸Åš Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤. ";
 		cin >> tel_in;
 
 		std::ifstream member_tel_file_r("member_tel.txt");
 		std::string member_tel_temp = "";
 
-		bool is_modify = false; // ±âÁ¸ Á¤º¸ ¼öÁ¤ or Ãß°¡¸¦ ÆÇ´ÜÇÏ´Â º¯¼ö
+		bool is_modify = false; // Ä…Ã¢ÃÂ¸ ÃÂ¤ÅŸÂ¸ ÅºÃ¶ÃÂ¤ or Ä‚ÃŸÂ°Ä„Â¸Åš Ä†Ã‡Â´ÃœÃ‡ÄÂ´Ã‚ ÅŸÅ»ÅºÃ¶
 		if (!member_tel_file_r.fail()) {
 			while (member_tel_file_r >> name >> tel) {
 				std::string line = name + " ";
@@ -323,7 +323,7 @@ void t_prac3()
 
 		member_tel_file_w.close();
 	}
-	else cout << "·Î±×ÀÎ ½ÇÆĞ";
+	else cout << "Ë‡ÃÄ…Ã—Å”Ã ËÃ‡Ä†Ä";
 
 	
 }
@@ -333,10 +333,10 @@ void prac23(member_Inf mem_ex)
 	string name2;
 	int pw2;
 
-	cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+	cout << "Å”ÄšÂ¸Â§Å”Å¥ Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤ : ";
 	cin >> name2;
 	
-	cout << "ºñ¹øÀ» ÀÔ·ÂÇÏ¼¼¿ä : ";
+	cout << "ÅŸÅ„Å¡Å™Å”Å¥ Å”Ã”Ë‡Ã‚Ã‡ÄÅºÅºÅ¼Ã¤ : ";
 	cin >> pw2;
 
 	
@@ -350,7 +350,7 @@ void prac23(member_Inf mem_ex)
 		{
 			if (pw2 == *it2)
 			{
-				cout << "·Î±×ÀÎ ¼º°ø" << endl;
+				cout << "Ë‡ÃÄ…Ã—Å”Ã ÅºÅŸÂ°Å™" << endl;
 				break;
 			}
 		}
@@ -358,7 +358,7 @@ void prac23(member_Inf mem_ex)
 
 		if (it == mem_ex._name.end() - 1)
 		{
-			cout << "·Î±×ÀÎ ½ÇÆĞ"<< endl;
+			cout << "Ë‡ÃÄ…Ã—Å”Ã ËÃ‡Ä†Ä"<< endl;
 			return;
 			
 		}
@@ -367,23 +367,23 @@ void prac23(member_Inf mem_ex)
 
 
 
-	cout << "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä :";
+	cout << "Å”Ã¼ÄŒÂ­Å¡Å™ÄŒÅÂ¸Åš Å”Ã”Ë‡Ã‚Ã‡Å˜ÃÃ–ÅºÅºÅ¼Ã¤ :";
 
 	string tel_t;
 	cin >> tel_t;
 
 
-	// ÇöÀç ÀüÈ­¹øÈ£ºÎ ÆÄÀÏ ÀĞ±â
+	// Ã‡Ã¶Å”Ã§ Å”Ã¼ÄŒÂ­Å¡Å™ÄŒÅÅŸÃ Ä†Ã„Å”Ä Å”ÄÄ…Ã¢
 
 	std::ifstream file_read("member_tel.txt");
 
 	//if (file_read.fail()) {
-	//	cout << "ÆÄÀÏ ¾øÀ¸´Ï »ı¼º" << endl;
+	//	cout << "Ä†Ã„Å”Ä Å¾Å™Å”Â¸Â´Ä Å¥Ã½ÅºÅŸ" << endl;
 	//	std::ofstream file;
 	//	
 	//	file.open("member_tel.txt");
 	//	if (file.fail()) {
-	//		cout << "ÆÄÀÏ ¿­±â ½ÇÆĞ" << endl;
+	//		cout << "Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢ ËÃ‡Ä†Ä" << endl;
 	//	}
 	//}
 
@@ -392,7 +392,7 @@ void prac23(member_Inf mem_ex)
 	string file_str = "";
 	string line;
 	
-	while (std::getline(file_read, line)) { // get_line() fileÀÇ ³»¿ëÀ» ÇÑ ÁÙ¾¿ ÀĞ¾î¿È
+	while (std::getline(file_read, line)) { // get_line() fileÅ”Ã‡ Å‚Å¥Å¼Ã«Å”Å¥ Ã‡Åƒ ÃÅ®Å¾Å¼ Å”ÄÅ¾Ã®Å¼ÄŒ
 		stringstream stream;
 		stream.str(line);
 		
@@ -402,13 +402,13 @@ void prac23(member_Inf mem_ex)
 			stream >> line;
 			chk._phone.push_back(line);
 		}
-		// stream.str("");//ÃÊ±âÈ­
+		// stream.str("");//Ä‚Ä˜Ä…Ã¢ÄŒÂ­
 		// stream.clear();
 	}
 
 	file_read.close();
 
-	// °°Àº »ç¶÷ÀÌ ÀÖ´Â°¡ È®ÀÎÇÏ±â
+	// Â°Â°Å”ÅŸ Å¥Ã§Å›Ã·Å”Äš Å”Ã–Â´Ã‚Â°Ä„ ÄŒÅ½Å”ÃÃ‡ÄÄ…Ã¢
 	bool chk_iden = true;
 	for (int i=0; i<mem_ex._name.size();i++)
 	{
@@ -438,12 +438,12 @@ void prac23(member_Inf mem_ex)
 		file_str += chk._name[i] +" " + chk._phone[i] + "\n";
 		
 	}
-	file << file_str; // file_str À» file¿¡ ÀÛ¼º
+	file << file_str; // file_str Å”Å¥ fileÅ¼Ä„ Å”Å°ÅºÅŸ
 	file.close();
 
 	
-	// ¾øÀ¸¸é ´ÙÀ½ÁÙ¿¡ ³Ö°í
-	// ÀÖÀ¸¸é ÀüÈ­¹øÈ£ °¥¾Æº¸±â
+	// Å¾Å™Å”Â¸Â¸Ã© Â´Å®Å”ËÃÅ®Å¼Ä„ Å‚Ã–Â°Ã­
+	// Å”Ã–Å”Â¸Â¸Ã© Å”Ã¼ÄŒÂ­Å¡Å™ÄŒÅ Â°Ä½Å¾Ä†ÅŸÂ¸Ä…Ã¢
 
 	//member_Inf _mem;
 	//vector<string> name;
@@ -461,25 +461,25 @@ void prac23(member_Inf mem_ex)
 
 
 	//std::ofstream file;
-	//// ÇÁ·Î±×·¥ÀÇ Ãâ·ÂÀ» ÆÄÀÏ¿¡ ÀúÀåÇÒ ¼ö ÀÖ°Ô µ½´Â Å¬·¡½º(program -> file)
+	//// Ã‡ÃË‡ÃÄ…Ã—Ë‡Ä½Å”Ã‡ Ä‚Ã¢Ë‡Ã‚Å”Å¥ Ä†Ã„Å”ÄÅ¼Ä„ Å”ÃºÅ”ÄºÃ‡Å‡ ÅºÃ¶ Å”Ã–Â°Ã” Ä¾ËÂ´Ã‚ Ä¹Å¹Ë‡Ä„ËÅŸ(program -> file)
 
 	//file.open("member.txt");
 	//if (file.fail()) {
-	//	cout << "ÆÄÀÏ ¿­±â ½ÇÆĞ" << endl;
+	//	cout << "Ä†Ã„Å”Ä Å¼Â­Ä…Ã¢ ËÃ‡Ä†Ä" << endl;
 	//	//return -1;
 	//}
 
-	//std::ifstream file_read("hello.txt"); // ÆÄÀÏ ¼±¾ğ ¹× ¿­±â¸¦ µ¿½Ã¿¡
+	//std::ifstream file_read("hello.txt"); // Ä†Ã„Å”Ä ÅºÄ…Å¾Ä‘ Å¡Ã— Å¼Â­Ä…Ã¢Â¸Åš Ä¾Å¼ËÄ‚Å¼Ä„
 	//if (file_read.fail()) {
-	//	cout << "ÆÄÀÏ ¾øÀ½" << endl;
-	//	// return -1;ÆÄÀÏÀÌ ¾È¿­¸®°Å³ª ¾øÀ»¶§ ¹İÈ¯ÇØÁÖ´Â ¼ıÀÚ (ÇÔ¼ö°¡ intÇüÀÌ¶ó °Á -1 ¹İÈ¯ÇØÁØ°Í)
+	//	cout << "Ä†Ã„Å”Ä Å¾Å™Å”Ë" << endl;
+	//	// return -1;Ä†Ã„Å”ÄÅ”Äš Å¾ÄŒÅ¼Â­Â¸Å½Â°Ä¹Å‚Å Å¾Å™Å”Å¥Å›Â§ Å¡ÃÄŒÅ»Ã‡Å˜ÃÃ–Â´Ã‚ ÅºÃ½Å”Ãš (Ã‡Ã”ÅºÃ¶Â°Ä„ intÃ‡Ã¼Å”ÄšÅ›Ã³ Â°Ã -1 Å¡ÃÄŒÅ»Ã‡Å˜ÃÅ˜Â°Ã)
 	//}
 
 	//string file_str = "";
 	//string line;
 
 
-	//while (std::getline(file_read, line)) { // get_line() fileÀÇ ³»¿ëÀ» ÇÑ ÁÙ¾¿ ÀĞ¾î¿È
+	//while (std::getline(file_read, line)) { // get_line() fileÅ”Ã‡ Å‚Å¥Å¼Ã«Å”Å¥ Ã‡Åƒ ÃÅ®Å¾Å¼ Å”ÄÅ¾Ã®Å¼ÄŒ
 	//	file_str += line + "\n";
 	//	cout << line << endl;
 	//}
