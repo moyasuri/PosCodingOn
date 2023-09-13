@@ -1,10 +1,17 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <vector>
 #include <time.h>
 using namespace std;
 
-#define Poison_damage (int)10
+// 스킬데미지
+#define Poison_damage 10
+
+// 스킬 코스트
+#define cost_of_skill_knight 30
+#define cost_of_skill_mage 50
+#define cost_of_skill_archer 15
+
 
 enum e_Player
 {
@@ -46,9 +53,10 @@ enum playerType
 class Client
 {
 public:
+	// 클라이언트 온
 	void Client_On()
 	{
-
+		// 게임시작
 		void play_game();
 
 	}
@@ -80,44 +88,14 @@ public:
 
 };
 
-class Item
-{
-public:
 
-	// item 클래스 선언을 하면
-	Item()
-	{
-		
-		Item_list H_portion = { "e_hp_portion",0 };
-		Item_list M_portion = { "e_mp_portion",0 };
-		Item_list portal_scroll = { "portal_scroll",0};
-
-		this->_item_list.push_back(H_portion);
-		this->_item_list.push_back(M_portion);
-		this->_item_list.push_back(portal_scroll);
-	}
-
-	
-
-
-
-public:
-	struct Item_list
-	{
-		string  _item_name;
-		int _num_item;
-	};
-	vector<Item_list> _item_list;
-	
-
-};
 
 class Player
 {
 public:
 	Player()
 	{
-		
+		Item _item;
 
 	}
 
@@ -137,20 +115,22 @@ public:
 	//	cout << "현재 아이템 개수 : " << this->_item_num << endl;
 
 	//}
-	void Item_use(e_Item item_name)
+
+
+	void Item_use(Item& item, e_Item& item_name)
 	{
 		switch (item_name)
 		{
 			case e_hp_portion:
-				cout << "남은 " << _item._item_list[item_name]._item_name << "개수는" << --_item._item_list[item_name]._num_item << endl;
+				cout << "남은 " << item._item_list[item_name]._item_name << "개수는" << --item._item_list[item_name]._num_item << endl;
 				this->_hp += 50;
 			break;
 			case e_mp_portion:
-				cout << "남은 " << _item._item_list[item_name]._item_name << "개수는" << --_item._item_list[item_name]._num_item << endl;
+				cout << "남은 " << item._item_list[item_name]._item_name << "개수는" << --item._item_list[item_name]._num_item << endl;
 				this->_mp += 20;
 			break;
 			case e_portal:
-				cout << "남은 " << _item._item_list[item_name]._item_name << "개수는" << --_item._item_list[item_name]._num_item << endl;
+				cout << "남은 " << item._item_list[item_name]._item_name << "개수는" << --item._item_list[item_name]._num_item << endl;
 				// ** 도망 필요
 			break;
 
@@ -203,24 +183,42 @@ public:
 
 		if (player._class == Knight)
 		{
-			player._hp +=100;
-			player._mp -= 30;
+			if (player._mp < cost_of_skill_knight)
+			{
+				cout << "not enough mana!" << endl;
+			}
+			
+			else
+			{
+				player._hp += 100;
+				player._mp -= 30;
+			}
 		}
 		else if (player._class == Mage)
 		{
-			monster._status_effect = e_stun;
+			if (player._mp < cost_of_skill_mage)
+			{
+				cout << "not enough mana!" << endl;
+			}
+
+			else
+			{
+				monster._status_effect = e_stun;
+				monster._cnt_of_side_effect = 3;
+			}
+		
 		}
 
 		else if (player._class == Archer)
 		{
 			monster._status_effect = e_poison;
+			monster._cnt_of_side_effect = 5;
 		}
 
-		
 	}
 
 
-	short Chk_status_effect(Player& monster) // 몬스터의 상태확인
+	short Chk_status_effect(const Player& monster) // 몬스터의 상태확인
 	{
 		if (monster._status_effect & e_poison)
 		{
@@ -234,7 +232,7 @@ public:
 	}
 
 	// 현재상황을 나타내는 프린트 함수가 필요해
-	void Chk_Print_status(Player player)
+	void Chk_Print_status(const Player &player)
 	{
 		if(!_player_type)
 		{ 
@@ -248,16 +246,26 @@ public:
 		}
 
 	}
-
-public:
-
-	Item _item;
-
-	/*void Print_Now()
+	
+	// 상황 파악
+	void Get_Result(Player& player, Monster& monster)
 	{
-		cout << "레벨: " << this->_level << endl;
-		cout << "현재 아이템 개수: " << this->_item_num << endl;
-	}*/
+		if (player._hp > player._max_hp)
+		{
+			player._hp = player._max_hp;
+		}
+		if (player._mp > player._max_mp)
+		{
+			player._mp = player._max_mp;
+		}
+		if (monster._hp < 0)
+		{
+			// 이김
+		}
+
+
+	}
+
 
 
 public:
@@ -274,19 +282,47 @@ public:
 
 };
 
+class Item
+{
+public:
+
+	// item 클래스 선언을 하면
+	Item()
+	{
+
+		Item_list H_portion = { "e_hp_portion",0 };
+		Item_list M_portion = { "e_mp_portion",0 };
+		Item_list portal_scroll = { "portal_scroll",0 };
+
+		this->_item_list.push_back(H_portion);
+		this->_item_list.push_back(M_portion);
+		this->_item_list.push_back(portal_scroll);
+
+	}
+
+
+public:
+	struct Item_list
+	{
+		string  _item_name;
+		int _num_item;
+	};
+	vector<Item_list> _item_list;
+
+
+};
 
 
 class Character : public Player
 {
 
 public:
+	
 	Character(int type)
 	{
 		
 		cout << " 캐릭터가 생성 되었습니다" << endl;
 		this->_player_type = 0;
-
-		
 
 		switch (type)
 		{
@@ -368,7 +404,7 @@ class Monster : public Player
 				this->_exp = 30;
 				this->_status_effect = 0;
 
-				cout << "살기가 느껴지는 오크르가 등장한다!" << endl;
+				cout << "살기가 느껴지는 오르크가 등장한다!" << endl;
 				break;
 
 			case dragon:
@@ -388,9 +424,9 @@ class Monster : public Player
 	}
 
 public:
-
 	
 	int _exp = 0;
+	int _cnt_of_side_effect = 0;
 
 };
 
