@@ -6,21 +6,21 @@
 
 
 
-// <fstream> ĆÄŔĎŔť ŔĐ°í, žľ źö ŔÖľľˇĎ °üˇĂ ąâ´ÉŔť ÁŚ°řÇĎ´Â Çě´ő
-// .open("ĆÄŔĎ¸í"); // ĆÄŔĎ ż­ąâ
-// .is_open(); //ĆÄŔĎ ż­ąâżĄ źş°řÇß´Ů¸é true
-// .fail(); // ĆÄŔĎ ż­ąâżĄ ˝ÇĆĐÇß´Ů¸é true
-// .close(); ĆÄŔĎ ´Ýąâ
+// <fstream> 파일을 읽고, 쓸 수 있도록 관련 기능을 제공하는 헤더
+// .open("파일명"); // 파일 열기
+// .is_open(); //파일 열기에 성공했다면 true
+// .fail(); // 파일 열기에 실패했다면 true
+// .close(); 파일 닫기
 
 
 // ifstream
-// ĆÄŔĎŔÇ łťżëŔť °ĄÁö°íżÍź­ ÇÁˇÎąŰ¸ĹżĄ ŔÔˇÂÇŇ źö ŔÖ°Ô ľľżÍÁÖ´Â ĹŹˇĄ˝ş
+// 파일의 내용을 가지고와서 프로글매에 입력할 수 있게 도와주는 클래스
 
 // string str
-// file >> str // śçžîž˛ąâ ŔüąîÁö strżĄ ŔúŔĺ
+// file >> str // 띄어쓰기 전까지 str에 저장
 
 
-// żŹą¸ÇŇ °ĄÄĄ<<
+// 연구할 가치<<
 // ifstream x
 // x>>name>>tel
 
@@ -48,25 +48,25 @@ void prac0()
 	// std::ifstream file_read;
 	// file_read.open("test_file.txt");   
 
-	// ĆÄŔĎ źąžđ°ú, ż­ąâ¸Ś ľűˇÎľűˇÎ
+	// 파일 선언과, 열기를 따로따로
 
-	std::ifstream file_read("hello.txt"); // ĆÄŔĎ źąžđ š× ż­ąâ¸Ś ľż˝ĂżĄ
+	std::ifstream file_read("hello.txt"); // 파일 선언 및 열기를 동시에
 	if (file_read.fail()) {
-		cout << "ĆÄŔĎ žřŔ˝" << endl;
-		// return -1;ĆÄŔĎŔĚ žČż­¸Ž°ĹłŞ žřŔťś§ šÝČŻÇŘÁÖ´Â źýŔÚ (ÇÔźö°Ą intÇüŔĚśó °Á -1 šÝČŻÇŘÁŘ°Í)
+		cout << "파일 없음" << endl;
+		// return -1;파일이 안열리거나 없을때 반환해주는 숫자 (함수가 int형이라 걍 -1 반환해준것)
 	}
 
 	string file_str = "";
 	string line;
 	vector<string> myStr;
 
-	// * Áßżä, vectorśó´Â °łłäŔĚ ŔÚľżŔ¸ˇÎ capa ´ĂˇÁÁÖ´Â°Ô žĆ´Ďśó push_back °°Ŕş ÇÔźö¸Ś §Ŕťś§żĄ¸¸ ŔÚľżŔ¸ˇÎ ´ĂˇÁÁÖ´Â °łłäŔĚžß.
-	// ľűśóź­ žĆˇĄżÍ °°Ŕş ˝Ç˝ŔŔť ÇŇś§żĄ´Â assignŔť šÝľĺ˝Ă ÇŘÁŕžßľĹ
-	myStr.assign(10, ""); // ąŰŔĚ ¸îÁŮˇÎ łŞ´ľžîÁŽ ŔÖŔťÁö ¸đ¸Ł´Ď 10Ŕť łÖŔ˝
-	int k = 0; // string vectorŔÇ ŔÎľŚ˝ş
+	// * 중요, vector라는 개념이 자동으로 capa 늘려주는게 아니라 push_back 같은 함수를 썻을때에만 자동으로 늘려주는 개념이야.
+	// 따라서 아래와 같은 실습을 할때에는 assign을 반드시 해줘야돼
+	myStr.assign(10, ""); // 글이 몇줄로 나뉘어져 있을지 모르니 10을 넣음
+	int k = 0; // string vector의 인덱스
 
 
-	while (std::getline(file_read, line)) { // get_line() fileŔÇ łťżëŔť ÇŃ ÁŮžż ŔĐžîżČ
+	while (std::getline(file_read, line)) { // get_line() file의 내용을 한 줄씩 읽어옴
 		file_str += line + "\n";
 		cout << line << endl;
 		myStr[k] = line;
@@ -79,7 +79,7 @@ void prac0()
 	//
 	//
 	//
-	//// ÇŇ´çŔť šÝľĺ˝ĂÇŘžßÇŃ´Ů.
+	//// 할당을 반드시해야한다.
 	//
 	//file_str = "";
 	//
@@ -91,17 +91,17 @@ void prac0()
 	//
 	//
 	//std::ofstream file;
-	// ÇÁˇÎą×ˇĽŔÇ ĂâˇÂŔť ĆÄŔĎżĄ ŔúŔĺÇŇ źö ŔÖ°Ô ľ˝´Â ĹŹˇĄ˝ş(program -> file)
+	// 프로그램의 출력을 파일에 저장할 수 있게 돕는 클래스(program -> file)
 	//
 	//file.open("output.txt");
-	//ofstream ąâşť°Ş->  std::ios::out (ž˛ąâ¸đľĺ) | std::ios::trunc (ĆÄŔĎŔÇ łťżëŔť ¸đľÎ ťčÁŚÇĎ°í ż­ąâ)
-	//file.open("test_file2.txt", std::ios::out | std::ios::app); // std::ios::app ( ĆÄŔĎŔÇ ¸śÁö¸ˇ ÁŮżĄ Ăß°Ą )
+	//ofstream 기본값->  std::ios::out (쓰기모드) | std::ios::trunc (파일의 내용을 모두 삭제하고 열기)
+	//file.open("test_file2.txt", std::ios::out | std::ios::app); // std::ios::app ( 파일의 마지막 줄에 추가 )
 	//if (file.fail()) {
-	//	cout << "ĆÄŔĎ ż­ąâ ˝ÇĆĐ" << endl;
+	//	cout << "파일 열기 실패" << endl;
 	//	return -1;
 	//}
-	// ş¸Ĺë ž˛ąâąÇÇŃżĄź­´Â ĆÄŔĎŔĚ žřŔť °ćżě ŔÚľżŔ¸ˇÎ ťýźşľĘ. ¸¸žŕ ŔÚľżŔ¸ˇÎ ťýźşľÇÁö žĘžŇŔť °ćżě fail()ŔĚ true°Ą łŞżĂ żšÁ¤
-	// file << file_str; // file_str Ŕť fileżĄ ŔŰźş
+	// 보통 쓰기권한에서는 파일이 없을 경우 자동으로 생성됨. 만약 자동으로 생성되지 않았을 경우 fail()이 true가 나올 예정
+	// file << file_str; // file_str 을 file에 작성
 	//file.close();
 	//
 }
@@ -115,114 +115,114 @@ member_Inf prac1()
 	string t_name;
 	int t_pw;
 
-	cout << "3¸íŔÇ Č¸żřżĄ ´ëÇŃ ŔĚ¸§ şńšĐšřČŁ¸Ś źřÂ÷ŔűŔ¸ˇÎ ŔÔˇÂÇĎźźżä." << endl;
-	cout << "1šřÂ°Č¸żř : " ;
+	cout << "3명의 회원에 대한 이름 비밀번호를 순차적으로 입력하세요." << endl;
+	cout << "1번째회원 : ";
 	cin >> t_name >> t_pw;
 	name.push_back(t_name);
 	pw.push_back(t_pw);
-	cout << "2šřÂ°Č¸żř : " ;
+	cout << "2번째회원 : ";
 	cin >> t_name >> t_pw;
 	name.push_back(t_name);
 	pw.push_back(t_pw);
-	cout << "3šřÂ°Č¸żř : " ;
+	cout << "3번째회원 : ";
 	cin >> t_name >> t_pw;
 	name.push_back(t_name);
 	pw.push_back(t_pw);
 
-	cout << "------------ Č¸żř ¸íşÎ ĆÄŔĎ ŔĐąâ -------------" << endl;
+	cout << "------------ 회원 명부 파일 읽기 -------------" << endl;
 
 
 
-	
+
 	std::ofstream file;
-	// ÇÁˇÎą×ˇĽŔÇ ĂâˇÂŔť ĆÄŔĎżĄ ŔúŔĺÇŇ źö ŔÖ°Ô ľ˝´Â ĹŹˇĄ˝ş(program -> file)
+	// 프로그램의 출력을 파일에 저장할 수 있게 돕는 클래스(program -> file)
 
 	file.open("member.txt");
 	if (file.fail()) {
-		cout << "ĆÄŔĎ ż­ąâ ˝ÇĆĐ" << endl;
+		cout << "파일 열기 실패" << endl;
 		//return -1;
 	}
-	// ş¸Ĺë ž˛ąâąÇÇŃżĄź­´Â ĆÄŔĎŔĚ žřŔť °ćżě ŔÚľżŔ¸ˇÎ ťýźşľĘ. ¸¸žŕ ŔÚľżŔ¸ˇÎ ťýźşľÇÁö žĘžŇŔť °ćżě fail()ŔĚ true°Ą łŞżĂ żšÁ¤
+	// 보통 쓰기권한에서는 파일이 없을 경우 자동으로 생성됨. 만약 자동으로 생성되지 않았을 경우 fail()이 true가 나올 예정
 	string file_str = "";
-	vector<string>::iterator it = name.begin();	
+	vector<string>::iterator it = name.begin();
 	vector<int>::iterator it2 = pw.begin();
-	for (it; it != name.end();it++)
+	for (it; it != name.end(); it++)
 	{
 		file_str = file_str + *it + " " + to_string(*it2) + "\n";
 		it2++;
 	}
 
 
-	file << file_str; // file_str Ŕť fileżĄ ŔŰźş
+	file << file_str; // file_str 을 file에 작성
 	file.close();
 
 
 
-	std::ifstream file_read("member.txt"); // ĆÄŔĎ źąžđ š× ż­ąâ¸Ś ľż˝ĂżĄ
+	std::ifstream file_read("member.txt"); // 파일 선언 및 열기를 동시에
 	if (file_read.fail()) {
-		cout << "ĆÄŔĎ žřŔ˝" << endl;
+		cout << "파일 없음" << endl;
 	}
 
 
-		file_str = "";
-		string line;
+	file_str = "";
+	string line;
 
 
-		while (std::getline(file_read, line)) { // get_line() fileŔÇ łťżëŔť ÇŃ ÁŮžż ŔĐžîżČ
-			file_str += line + "\n";
-			cout << line << endl;
-		}
+	while (std::getline(file_read, line)) { // get_line() file의 내용을 한 줄씩 읽어옴
+		file_str += line + "\n";
+		cout << line << endl;
+	}
 
-		file_read.close();
+	file_read.close();
 
-		_mem._name =  name;
-		_mem._pw =  pw;
+	_mem._name = name;
+	_mem._pw = pw;
 
-	
-		return _mem;
+
+	return _mem;
 }
 void t_prac2()
 {
-//#include <iostream>
-//#include <fstream>
-//#include <string>
-//
-//	using std::cout;
-//	using std::cin;
-//	using std::endl;
-//	using std::getline;
-//	using std::string;
+	//#include <iostream>
+	//#include <fstream>
+	//#include <string>
+	//
+	//	using std::cout;
+	//	using std::cin;
+	//	using std::endl;
+	//	using std::getline;
+	//	using std::string;
 
-		std::ifstream member_file;
-		std::string name, pw, str1, str2;
-		member_file.open("member.txt");
-		std::cout << "ŔĚ¸§Ŕť ŔÔˇÂÇĎźźżä.";
-		std::cin >> name;
+	std::ifstream member_file;
+	std::string name, pw, str1, str2;
+	member_file.open("member.txt");
+	std::cout << "이름을 입력하세요.";
+	std::cin >> name;
 
-		std::cout << "şńšřŔť ŔÔˇÂÇĎźźżä.";
-		std::cin >> pw;
+	std::cout << "비번을 입력하세요.";
+	std::cin >> pw;
 
-		bool flag = false;
-		while (member_file >> str1 >> str2) {
-			if (name == str1 && pw == str2) {
-				flag = true;
-				break;
-			}
+	bool flag = false;
+	while (member_file >> str1 >> str2) {
+		if (name == str1 && pw == str2) {
+			flag = true;
+			break;
 		}
+	}
 
-		if (flag) cout << "ˇÎą×ŔÎ źş°ř";
-		else cout << "ˇÎą×ŔÎ ˝ÇĆĐ";
+	if (flag) cout << "로그인 성공";
+	else cout << "로그인 실패";
 
-		member_file.close();
+	member_file.close();
 
-		
-	
+
+
 }
 void t_ex()
 {
 
 
-	
+
 	std::ofstream file("example.txt", std::ios::in | std::ios::out); // Open the file for both reading and writing
 
 	if (!file) {
@@ -253,7 +253,7 @@ bool checkFileOpen(std::ifstream& file) {
 
 bool checkFileOpen(std::ofstream& file) {
 	if (file.fail()) {
-		cout << "ĆÄŔĎ žřŔ˝" << endl;
+		cout << "파일 없음" << endl;
 		return false;
 	}
 	else return true;
@@ -271,14 +271,14 @@ void t_prac3()
 
 	}
 
-	
-	cout << "ŔĚ¸§Ŕť ŔÔˇÂÇĎźźżä. ";
+
+	cout << "이름을 입력하세요. ";
 	cin >> name_in;
-	
-	cout << "şńšřŔť ŔÔˇÂÇĎźźżä. ";
+
+	cout << "비번을 입력하세요. ";
 	cin >> pw_in;
 
-	bool flag = false; // ˇÎą×ŔÎ źş°ř żŠşÎ¸Ś ´ă´Â şŻźö
+	bool flag = false; // 로그인 성공 여부를 담는 변수
 	while (member_file >> name >> pw) {
 		if (name == name_in && pw == pw_in) {
 			flag = true;
@@ -289,14 +289,14 @@ void t_prac3()
 
 	if (flag) {
 		std::string tel_in, tel;
-		cout << "ˇÎą×ŔÎ źş°ř" << endl;
-		cout << "ŔüČ­šřČŁ¸Ś ŔÔˇÂÇĎźźżä. ";
+		cout << "로그인 성공" << endl;
+		cout << "전화번호를 입력하세요. ";
 		cin >> tel_in;
 
 		std::ifstream member_tel_file_r("member_tel.txt");
 		std::string member_tel_temp = "";
 
-		bool is_modify = false; // ąâÁ¸ Á¤ş¸ źöÁ¤ or Ăß°Ą¸Ś ĆÇ´ÜÇĎ´Â şŻźö
+		bool is_modify = false; // 기존 정보 수정 or 추가를 판단하는 변수
 		if (!member_tel_file_r.fail()) {
 			while (member_tel_file_r >> name >> tel) {
 				std::string line = name + " ";
@@ -323,9 +323,9 @@ void t_prac3()
 
 		member_tel_file_w.close();
 	}
-	else cout << "ˇÎą×ŔÎ ˝ÇĆĐ";
+	else cout << "로그인 실패";
 
-	
+
 }
 
 void prac23(member_Inf mem_ex)
@@ -333,24 +333,24 @@ void prac23(member_Inf mem_ex)
 	string name2;
 	int pw2;
 
-	cout << "ŔĚ¸§Ŕť ŔÔˇÂÇĎźźżä : ";
+	cout << "이름을 입력하세요 : ";
 	cin >> name2;
-	
-	cout << "şńšřŔť ŔÔˇÂÇĎźźżä : ";
+
+	cout << "비번을 입력하세요 : ";
 	cin >> pw2;
 
-	
-	
+
+
 	vector<string>::iterator it = mem_ex._name.begin();
 	vector<int>::iterator it2 = mem_ex._pw.begin();
 
-	for (it; it != mem_ex._name.end();it++)
+	for (it; it != mem_ex._name.end(); it++)
 	{
 		if (name2 == *it)
 		{
 			if (pw2 == *it2)
 			{
-				cout << "ˇÎą×ŔÎ źş°ř" << endl;
+				cout << "로그인 성공" << endl;
 				break;
 			}
 		}
@@ -358,32 +358,32 @@ void prac23(member_Inf mem_ex)
 
 		if (it == mem_ex._name.end() - 1)
 		{
-			cout << "ˇÎą×ŔÎ ˝ÇĆĐ"<< endl;
+			cout << "로그인 실패" << endl;
 			return;
-			
+
 		}
 
 	}
 
 
 
-	cout << "ŔüČ­šřČŁ¸Ś ŔÔˇÂÇŘÁÖźźżä :";
+	cout << "전화번호를 입력해주세요 :";
 
 	string tel_t;
 	cin >> tel_t;
 
 
-	// ÇöŔç ŔüČ­šřČŁşÎ ĆÄŔĎ ŔĐąâ
+	// 현재 전화번호부 파일 읽기
 
 	std::ifstream file_read("member_tel.txt");
 
 	//if (file_read.fail()) {
-	//	cout << "ĆÄŔĎ žřŔ¸´Ď ťýźş" << endl;
+	//	cout << "파일 없으니 생성" << endl;
 	//	std::ofstream file;
 	//	
 	//	file.open("member_tel.txt");
 	//	if (file.fail()) {
-	//		cout << "ĆÄŔĎ ż­ąâ ˝ÇĆĐ" << endl;
+	//		cout << "파일 열기 실패" << endl;
 	//	}
 	//}
 
@@ -391,28 +391,28 @@ void prac23(member_Inf mem_ex)
 	member_Inf chk;
 	string file_str = "";
 	string line;
-	
-	while (std::getline(file_read, line)) { // get_line() fileŔÇ łťżëŔť ÇŃ ÁŮžż ŔĐžîżČ
+
+	while (std::getline(file_read, line)) { // get_line() file의 내용을 한 줄씩 읽어옴
 		stringstream stream;
 		stream.str(line);
-		
+
 		while (stream >> line)
 		{
 			chk._name.push_back(line);
 			stream >> line;
 			chk._phone.push_back(line);
 		}
-		// stream.str("");//ĂĘąâČ­
+		// stream.str("");//초기화
 		// stream.clear();
 	}
 
 	file_read.close();
 
-	// °°Ŕş ťçś÷ŔĚ ŔÖ´Â°Ą ČŽŔÎÇĎąâ
+	// 같은 사람이 있는가 확인하기
 	bool chk_iden = true;
-	for (int i=0; i<mem_ex._name.size();i++)
+	for (int i = 0; i < mem_ex._name.size(); i++)
 	{
-		for (int j = 0; j < chk._name.size();j++)
+		for (int j = 0; j < chk._name.size(); j++)
 		{
 			if (mem_ex._name[i] == chk._name[j])
 			{
@@ -433,17 +433,17 @@ void prac23(member_Inf mem_ex)
 
 	file.open("member_tel.txt");
 
-	for(int i =0; i<chk._name.size();i++)
+	for (int i = 0; i < chk._name.size(); i++)
 	{
-		file_str += chk._name[i] +" " + chk._phone[i] + "\n";
-		
+		file_str += chk._name[i] + " " + chk._phone[i] + "\n";
+
 	}
-	file << file_str; // file_str Ŕť fileżĄ ŔŰźş
+	file << file_str; // file_str 을 file에 작성
 	file.close();
 
-	
-	// žřŔ¸¸é ´ŮŔ˝ÁŮżĄ łÖ°í
-	// ŔÖŔ¸¸é ŔüČ­šřČŁ °ĽžĆş¸ąâ
+
+	// 없으면 다음줄에 넣고
+	// 있으면 전화번호 갈아보기
 
 	//member_Inf _mem;
 	//vector<string> name;
@@ -461,32 +461,32 @@ void prac23(member_Inf mem_ex)
 
 
 	//std::ofstream file;
-	//// ÇÁˇÎą×ˇĽŔÇ ĂâˇÂŔť ĆÄŔĎżĄ ŔúŔĺÇŇ źö ŔÖ°Ô ľ˝´Â ĹŹˇĄ˝ş(program -> file)
+	//// 프로그램의 출력을 파일에 저장할 수 있게 돕는 클래스(program -> file)
 
 	//file.open("member.txt");
 	//if (file.fail()) {
-	//	cout << "ĆÄŔĎ ż­ąâ ˝ÇĆĐ" << endl;
+	//	cout << "파일 열기 실패" << endl;
 	//	//return -1;
 	//}
 
-	//std::ifstream file_read("hello.txt"); // ĆÄŔĎ źąžđ š× ż­ąâ¸Ś ľż˝ĂżĄ
+	//std::ifstream file_read("hello.txt"); // 파일 선언 및 열기를 동시에
 	//if (file_read.fail()) {
-	//	cout << "ĆÄŔĎ žřŔ˝" << endl;
-	//	// return -1;ĆÄŔĎŔĚ žČż­¸Ž°ĹłŞ žřŔťś§ šÝČŻÇŘÁÖ´Â źýŔÚ (ÇÔźö°Ą intÇüŔĚśó °Á -1 šÝČŻÇŘÁŘ°Í)
+	//	cout << "파일 없음" << endl;
+	//	// return -1;파일이 안열리거나 없을때 반환해주는 숫자 (함수가 int형이라 걍 -1 반환해준것)
 	//}
 
 	//string file_str = "";
 	//string line;
 
 
-	//while (std::getline(file_read, line)) { // get_line() fileŔÇ łťżëŔť ÇŃ ÁŮžż ŔĐžîżČ
+	//while (std::getline(file_read, line)) { // get_line() file의 내용을 한 줄씩 읽어옴
 	//	file_str += line + "\n";
 	//	cout << line << endl;
 	//}
 
 }
 
-int main(){
+int main() {
 
 	setlocale(LC_ALL, "Korean");
 
