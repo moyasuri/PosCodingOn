@@ -72,5 +72,14 @@
     <ClCompile Include="0912-inherit.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="0913-추상.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="0913-캐스팅.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="0913-static_member.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
