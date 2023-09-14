@@ -9,7 +9,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
+    <Filter Include="example">
+      <UniqueIdentifier>{0de6f6dd-28cc-4ebf-abb4-5d9022dfc3aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="example\헤더 파일">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
@@ -78,8 +81,31 @@
     <ClCompile Include="0913-캐스팅.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="0913-static_member.cpp">
+    <ClCompile Include="0914-Random.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Candy.cpp">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="Chocolate.cpp">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="Snack.cpp">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="0913-static_member.cpp">
+      <Filter>example</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Candy.h">
+      <Filter>example\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Chocolate.h">
+      <Filter>example\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Snack.h">
+      <Filter>example\헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
