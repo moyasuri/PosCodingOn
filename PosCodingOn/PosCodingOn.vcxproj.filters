@@ -81,7 +81,7 @@
     <ClCompile Include="0913-캐스팅.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="0914-Random.cpp">
+    <ClCompile Include="0915-Random.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Candy.cpp">
